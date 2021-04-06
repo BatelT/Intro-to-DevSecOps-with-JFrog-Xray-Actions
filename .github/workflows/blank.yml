@@ -20,6 +20,7 @@ jobs:
           distribution: 'adopt'    
       - name: Run JFrog CLI
         run: |
+          env -i PATH=$PATH M2_HOME=$M2_HOME HOME=$HOME
           export CI=true 
           jfrog rt mvnc --server-id-deploy aol --repo-deploy-releases libs-release-local --repo-deploy-snapshots libs-snapshot-local
           jfrog rt mvn clean install -f pom.xml    
