@@ -13,6 +13,7 @@ jobs:
           version: 1.46.1
         env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
+          JFROG_CLI_LOG_LEVEL: DEBUG
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
