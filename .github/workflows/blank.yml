@@ -14,8 +14,6 @@ jobs:
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
-          jfrog rt bce
-          # Collect VCS details from git and add them to the build
-          jfrog rt bag
+          jfrog rt bce AKS-Deployment ${{ github.run_number }}
           # Publish build info
-          jfrog rt bp
+          jfrog rt bp AKS-Deployment ${{ github.run_number }}
