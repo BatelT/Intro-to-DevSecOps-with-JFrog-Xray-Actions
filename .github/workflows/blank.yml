@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup JFrog CLI
-      - uses: yahavi/setup-jfrog-cli@update-cli
+        uses: yahavi/setup-jfrog-cli@update-cli
         env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
           JFROG_CLI_LOG_LEVEL: DEBUG
