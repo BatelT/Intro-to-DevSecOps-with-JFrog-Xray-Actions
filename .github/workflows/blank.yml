@@ -20,6 +20,7 @@ jobs:
           distribution: 'adopt'    
       - name: Run JFrog CLI
         run: |
+          MVN_PATH=`which mvn` && export M2_HOME=`readlink -f $MVN_PATH | xargs dirname | xargs dirname` 
           env -i PATH=$PATH M2_HOME=$M2_HOME HOME=$HOME
           export CI=true 
           jfrog rt mvnc --server-id-deploy aol --repo-deploy-releases libs-release-local --repo-deploy-snapshots libs-snapshot-local
