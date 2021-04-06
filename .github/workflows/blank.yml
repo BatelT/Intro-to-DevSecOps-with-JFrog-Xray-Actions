@@ -17,7 +17,7 @@ jobs:
         run: |
           jfrog rt mvnc
               --server-id-deploy aol --repo-deploy-releases libs-release-local --repo-deploy-snapshots libs-snapshot-local
-          jfrog rt mvn clean install     
+          jfrog rt mvn clean install -f pom.xml    
           # Collect environment variables for the build
           jfrog rt bag
           # Publish build info
